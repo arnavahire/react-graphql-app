@@ -1,0 +1,32 @@
+.header {
+    padding: 10px 20px;
+    background-color: #333; /* Example background color, adjust as needed */
+    color: white;
+    display: flex;
+    justify-content: space-evenly; /* To push the nav to the right, for example */
+    align-items: center;
+}
+
+.header nav ul {
+    list-style: none; /* Remove bullet points from the list */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Make the ul a flex container */
+}
+
+.header nav ul li {
+    margin-right: 20px; /* Add spacing between list items */
+}
+
+.header nav ul li:last-child {
+    margin-right: 0; /* Remove right margin from the last item */
+}
+
+.header nav ul li a {
+    color: white; /* Style your links */
+    text-decoration: none; /* Remove underline */
+}
+
+.header nav ul li a:hover {
+    color: lightgray; /* Hover effect */
+}
