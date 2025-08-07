@@ -33,7 +33,7 @@ In order to use the apollo client successfully to fetch the data using CACU's op
 
 #### Fetching data from ODP
 
-ODP doesn't support direct querying of data like graphql using api key. It has a CORS policy which doesn't allow response to be sent to client. The workaround done for this was to use a backend proxy that would serve as a server and would make a server request to the target ODP url so that CORS policy can be circumvented and appropriate response can be received. In order to do that though, vite.config.ts file needs to be updated with the ODP API key by adding it to 'x-api-key' header.
+ODP doesn't support direct querying of data like graphql using api key. It has a CORS policy which doesn't allow response to be sent to client. The workaround done for this was to use a backend proxy that would serve as a server and would make a server request to the target ODP url so that CORS policy can be circumvented and appropriate response can be received. In order to do that though, vite.config.ts file needs to be updated with the ODP API key by adding it to 'x-api-key' header in place of {ODP_API_KEY}.
 
 ### SIDE-NOTE:
 

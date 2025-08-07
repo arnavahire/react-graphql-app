@@ -13,7 +13,7 @@ export default defineConfig({
         configure: (proxy) => {
           proxy.on('proxyReq', (proxyReq) => {
             // Add custom headers here
-            proxyReq.setHeader('x-api-key', 'c3-znxkfodim9i0ycEw15Q.jyHQARFgSx0qzaA0t-AGeWXDZHsHjhycT17ryiD6UJ0');
+            proxyReq.setHeader('x-api-key', '{ODP_API_KEY}');
             proxyReq.setHeader('Content-Type', 'application/json');
           });
         },
