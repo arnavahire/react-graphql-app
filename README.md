@@ -44,6 +44,25 @@ Our Graphql client can be configured to point to that url in case you want to te
 
 Using a code generation tool, a generated.ts file can be created that defines TypeScript types corresponding to GraphQL interfaces, facilitating type-safe development and schema alignment.
 
-### SCREENSHOTS
+### SCREENSHOTS:
 
+Login
 ![Login](<Screen Shot 2025-08-07 at 1.23.12 PM.png>)
+Signup
+![SignUp](<Screen Shot 2025-08-07 at 1.30.20 PM.png>)
+Login Validations
+![Login Validations](<Screen Shot 2025-08-07 at 1.32.33 PM.png>)
+Home for user that belongs to segment "test_segment"
+![Home User1](<Screen Shot 2025-08-07 at 1.35.16 PM.png>)
+User segments for user that belongs to segment "test_segment"
+![User Segments User 1](<Screen Shot 2025-08-07 at 1.38.43 PM.png>)
+Home for user that does not belong to segment "test_segment"
+![Home User2](<Screen Shot 2025-08-07 at 1.41.18 PM.png>)
+User segments for user that does not belong to segment "test_segment"
+![User Segments User 2](<Screen Shot 2025-08-07 at 1.42.32 PM.png>)
+Advisor Listing
+![Advisor Listing](<Screen Shot 2025-08-07 at 1.45.23 PM.png>)
+News Listing
+![News Listing](<Screen Shot 2025-08-07 at 1.46.22 PM.png>)
+Logout
+![Logout](<Screen Shot 2025-08-07 at 1.47.25 PM.png>)
