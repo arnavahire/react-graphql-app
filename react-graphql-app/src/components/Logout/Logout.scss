@@ -1,0 +1,63 @@
+// Variables
+$container-width: 500px;
+$container-padding-bottom: 30px;
+$header-margin-top: 30px;
+$header-gap: 10px;
+$text-font-size: 48px;
+$text-font-weight: 700;
+$underline-bg: #ffffffde;
+$underline-width: 100px;
+$underline-height: 6px;
+$underline-border-radius: 9px;
+$inputs-margin-top: 55px;
+$inputs-gap: 25px;
+$input-width: 400px;
+$input-height: 60px;
+$input-bg: #444444;
+$input-border-radius: 6px;
+$input-img-margin: 0px 30px;
+$input-field-height: 30px;
+$input-field-width: 250px;
+$input-field-color: #797979;
+$input-field-font-size: 19px;
+$forgot-password-margin-top: 27px;
+$forgot-password-color: #797979;
+$forgot-password-font-size: 16px;
+$forgot-password-span-color: #4c00b4;
+$submit-container-gap: 30px;
+$submit-container-margin: 30px auto;
+$submit-height: 50px;
+$submit-width: 150px;
+$submit-bg: #4c00b4;
+$submit-border-radius: 30px;
+$submit-font-size: 19px;
+$submit-font-weight: 700;
+$submit-gray-bg: #6a6a6a;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10rem auto;
+  padding-bottom: $container-padding-bottom;
+  width: $container-width;
+
+  .header { // Nesting .header within .container
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $header-gap;
+    margin-top: $header-margin-top;
+
+    .text { // Nesting .text within .header
+      font-size: $text-font-size;
+      font-weight: $text-font-weight;
+    }
+
+    .underline { // Nesting .underline within .header
+      background: $underline-bg;
+      width: $underline-width;
+      height: $underline-height;
+      border-radius: $underline-border-radius;
+    }
+  }
+}

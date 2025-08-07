@@ -1,18 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
+import { BrowserRouter } from "react-router-dom";
+import "./index.scss";
 import App from "./App.tsx";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-
-const client = new ApolloClient({
-  uri: "https://cg.optimizely.com/content/v2?auth={API_KEY}",
-  cache: new InMemoryCache(),
-});
+import { ApolloProvider } from "@apollo/client";
+import { OptiODPClient } from "./shared/ApolloClients.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <ApolloProvider client={client}>
-    <StrictMode>
-      <App />
-    </StrictMode>
-  </ApolloProvider>
+  <BrowserRouter>
+    <ApolloProvider client={OptiODPClient}>
+      <StrictMode>
+        <App />
+      </StrictMode>
+    </ApolloProvider>
+  </BrowserRouter>
 );

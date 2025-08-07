@@ -1,15 +1,17 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { GET_ADVISORS_QUERY } from "../../graphql/GetAdvisorsQuery.graphql.ts";
-import "./Advisors.css";
+import "./Advisors.scss";
+import { OptiGraphqlClient } from "../../shared/ApolloClients.tsx";
+import { Header } from "../Header/Header.tsx";
 
 export const Advisors: React.FC = () => {
-  const { data, loading, error } = useQuery(GET_ADVISORS_QUERY);
+  const { data, loading, error } = useQuery(GET_ADVISORS_QUERY, {
+    client: OptiGraphqlClient, // takes precedence over the ODP client configured in main.tsx. Hence we configured every query to use it's corresponding client.
+  });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
-
-  console.log(data);
 
   // Optional: Add a check for data existence and structure if you prefer
   if (!data || !data.AdvisorPage || !data.AdvisorPage.items) {
@@ -17,7 +19,8 @@ export const Advisors: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="advisor-page">
+      <Header />
       <h1>Advisors</h1>
       {data.AdvisorPage.items.map(
         (

@@ -1,10 +1,14 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { GET_NEWS_QUERY } from "../../graphql/GetNewsQuery.graphql.ts";
-import "./News.css";
+import "./News.scss";
+import { OptiGraphqlClient } from "../../shared/ApolloClients.tsx";
+import { Header } from "../Header/Header.tsx";
 
 export const News: React.FC = () => {
-  const { data, loading, error } = useQuery(GET_NEWS_QUERY);
+  const { data, loading, error } = useQuery(GET_NEWS_QUERY, {
+    client: OptiGraphqlClient,
+  });
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error...</p>;
@@ -14,10 +18,9 @@ export const News: React.FC = () => {
     return <p>No news data available.</p>;
   }
 
-  console.log(data);
-
   return (
-    <div>
+    <div className="news-page">
+      <Header />
       <h1>Latest News</h1>
       {data.NewsPage.items.map(
         (

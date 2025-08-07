@@ -1,0 +1,55 @@
+// Variables
+$max-width: 1280px;
+$padding-root: 0;
+$logo-height: 6em;
+$logo-padding: 1.5em;
+$transition-duration: 300ms;
+$shadow-color-general: #646cffaa;
+$shadow-color-react: #61dafbaa;
+$card-padding: 2em;
+$read-docs-color: #888;
+$animation-duration: 20s;
+
+#root {
+  padding: $padding-root;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  height: $logo-height;
+  padding: $logo-padding;
+  will-change: filter;
+  transition: filter $transition-duration;
+
+  &:hover {
+    filter: drop-shadow(0 0 2em $shadow-color-general);
+  }
+
+  &.react:hover { // Combining selectors with nesting
+    filter: drop-shadow(0 0 2em $shadow-color-react);
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite $animation-duration linear;
+  }
+}
+
+.card {
+  padding: $card-padding;
+}
+
+.read-the-docs {
+  color: $read-docs-color;
+}

@@ -1,0 +1,73 @@
+// Variables
+$card-width: 300px;
+$border-color: #ccc;
+$border-radius: 8px;
+$box-shadow-color: rgba(0, 0, 0, 0.1);
+$card-margin: 20px;
+$padding-content: 15px;
+$font-size-h2: 1.2em;
+$margin-bottom-h2: 5px;
+$font-size-date: 0.8em;
+$color-date: #888;
+$margin-bottom-date: 10px;
+$font-size-p: 0.9em;
+$line-height-p: 1.5;
+$margin-bottom-p: 15px;
+$link-color: #007bff;
+
+.news-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .news-card {
+    width: $card-width;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 4px $box-shadow-color;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensures rounded corners on image */
+    margin: $card-margin;
+
+    .card-image { // Nesting .card-image within .news-card
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius $border-radius 0 0; /* Rounds top corners of image */
+      }
+    }
+
+    .card-content { // Nesting .card-content within .news-card
+      padding: $padding-content;
+    }
+
+    h2 { // Nesting h2 within .news-card
+      font-size: $font-size-h2;
+      margin-top: 0;
+      margin-bottom: $margin-bottom-h2;
+    }
+
+    .news-date { // Nesting .news-date within .news-card
+      font-size: $font-size-date;
+      color: $color-date;
+      margin-bottom: $margin-bottom-date;
+    }
+
+    p { // Nesting p within .news-card
+      font-size: $font-size-p;
+      line-height: $line-height-p;
+      margin-bottom: $margin-bottom-p;
+    }
+
+    a { // Nesting a within .news-card
+      text-decoration: none;
+      color: $link-color;
+      font-weight: bold;
+
+      &:hover { // Using the parent selector '&' for pseudo-class
+        text-decoration: underline;
+      }
+    }
+  }
+}
